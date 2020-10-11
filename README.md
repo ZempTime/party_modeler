@@ -8,9 +8,13 @@ Maybe a pretty visual later. There are two key ideas here:
 * A 'Party' is a human concept which provides a blended way of referring to "a single person" or "a group of persons." This is a higher-scale idea than either people or organizations (both of which can "belong to" a party), and allows us to consolidate logic which is often duplicated between orgs & individuals.
 * A 'relationship' is different than a 'role.' There could be multiple kinds of relationships between two parties. For example, someone might _both_ be a customer of an organization, as well as an employee. In this respect, relationship answers "what is it" and role answers the question "what does it do."
 
+**Areas to be explored later:*
+* Approvals (aka friend requests)
+* Adding `persons` table, and `organizations` table, then pointing these at `parties`
+
 Here's a walkthrough of the tables:
 
-***Party** - a person or organization. right now, has a name(later, tables for these will point at this `parties` table)
+**Party** - a person or organization.
 - id
 - name
 - has_many :party_roles
