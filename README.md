@@ -2,6 +2,10 @@
 
 This is an exploratory application intended to explore one specific area: how blend the often-duplicated logic and storage which emerges when representing individuals & organizations.
 
+To see it go...
+* `bundle install`
+* `bin/rails db:seed`
+
 ## Data Model
 
 Maybe a pretty visual later. There are two key ideas here:
@@ -38,3 +42,5 @@ Here's a semantic walkthrough of the [tables](https://github.com/ZempTime/party_
 
 **Role Type** (wondering if this shouldn't just be an `enum` on another table...)
 - description
+
+To see this data play out across some various dimensions, check out [seeds.rb](https://github.com/ZempTime/party_modeler/blob/main/db/seeds.rb):

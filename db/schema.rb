@@ -19,23 +19,25 @@ ActiveRecord::Schema.define(version: 2020_10_11_171327) do
   end
 
   create_table "party_relationship_types", force: :cascade do |t|
-    t.integer "from_role_id", null: false
-    t.integer "to_role_id", null: false
+    t.integer "valid_from_role_id", null: false
+    t.integer "valid_to_role_id", null: false
     t.string "description"
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["from_role_id"], name: "index_party_relationship_types_on_from_role_id"
-    t.index ["to_role_id"], name: "index_party_relationship_types_on_to_role_id"
+    t.index ["valid_from_role_id"], name: "index_party_relationship_types_on_valid_from_role_id"
+    t.index ["valid_to_role_id"], name: "index_party_relationship_types_on_valid_to_role_id"
   end
 
   create_table "party_relationships", force: :cascade do |t|
+    t.integer "party_relationship_type_id", null: false
     t.integer "from_role_id", null: false
     t.integer "to_role_id", null: false
     t.date "thru_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["from_role_id"], name: "index_party_relationships_on_from_role_id"
+    t.index ["party_relationship_type_id"], name: "index_party_relationships_on_party_relationship_type_id"
     t.index ["to_role_id"], name: "index_party_relationships_on_to_role_id"
   end
 
@@ -54,8 +56,9 @@ ActiveRecord::Schema.define(version: 2020_10_11_171327) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "party_relationship_types", "role_types", column: "from_role_id"
-  add_foreign_key "party_relationship_types", "role_types", column: "to_role_id"
+  add_foreign_key "party_relationship_types", "role_types", column: "valid_from_role_id"
+  add_foreign_key "party_relationship_types", "role_types", column: "valid_to_role_id"
+  add_foreign_key "party_relationships", "party_relationship_types"
   add_foreign_key "party_relationships", "party_roles", column: "from_role_id"
   add_foreign_key "party_relationships", "party_roles", column: "to_role_id"
   add_foreign_key "party_roles", "parties"
