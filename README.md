@@ -12,7 +12,7 @@ Maybe a pretty visual later. There are two key ideas here:
 * Approvals (aka friend requests)
 * Adding `persons` table, and `organizations` table, then pointing these at `parties`
 
-Here's a walkthrough of the tables:
+Here's a semantic walkthrough of the [tables](https://github.com/ZempTime/party_modeler/blob/main/db/schema.rb):
 
 **Party** - a person or organization.
 - id
