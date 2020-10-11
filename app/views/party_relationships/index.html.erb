@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Party Relationships</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>From role</th>
+      <th>To role</th>
+      <th>Thru date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @party_relationships.each do |party_relationship| %>
+      <tr>
+        <td><%= party_relationship.from_role_id %></td>
+        <td><%= party_relationship.to_role_id %></td>
+        <td><%= party_relationship.thru_date %></td>
+        <td><%= link_to 'Show', party_relationship %></td>
+        <td><%= link_to 'Edit', edit_party_relationship_path(party_relationship) %></td>
+        <td><%= link_to 'Destroy', party_relationship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Party Relationship', new_party_relationship_path %>

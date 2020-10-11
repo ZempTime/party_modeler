@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from_role: one
+  to_role: one
+  description: MyString
+  name: MyString
+
+two:
+  from_role: two
+  to_role: two
+  description: MyString
+  name: MyString

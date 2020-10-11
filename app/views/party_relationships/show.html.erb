@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>From role:</strong>
+  <%= @party_relationship.from_role_id %>
+</p>
+
+<p>
+  <strong>To role:</strong>
+  <%= @party_relationship.to_role_id %>
+</p>
+
+<p>
+  <strong>Thru date:</strong>
+  <%= @party_relationship.thru_date %>
+</p>
+
+<%= link_to 'Edit', edit_party_relationship_path(@party_relationship) %> |
+<%= link_to 'Back', party_relationships_path %>

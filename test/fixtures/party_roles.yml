@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  party: one
+  role_type: one
+
+two:
+  party: two
+  role_type: two

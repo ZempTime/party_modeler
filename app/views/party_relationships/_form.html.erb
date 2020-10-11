@@ -1,0 +1,32 @@
+<%= form_with(model: party_relationship, local: true) do |form| %>
+  <% if party_relationship.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(party_relationship.errors.count, "error") %> prohibited this party_relationship from being saved:</h2>
+
+      <ul>
+        <% party_relationship.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :from_role_id %>
+    <%= form.text_field :from_role_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :to_role_id %>
+    <%= form.text_field :to_role_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :thru_date %>
+    <%= form.date_select :thru_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
