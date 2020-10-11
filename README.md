@@ -44,3 +44,10 @@ Here's a semantic walkthrough of the [tables](https://github.com/ZempTime/party_
 - description
 
 To see this data play out across some various dimensions, check out [seeds.rb](https://github.com/ZempTime/party_modeler/blob/main/db/seeds.rb):
+
+## Remaining Open Decisions
+
+* How to implement relationships so they're always looked up same way, preventin need to store bidirectional info
+* Validation of PartyRelationship across from/to role types in relation to above
+* Enum refactoring
+* Bidirectional approval implementation
